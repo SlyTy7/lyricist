@@ -1,1 +1,1 @@
-console.log('hello world')
+console.log('server up and running')
