@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Register</h1>
-
     <input 
       type="email"
       name="email"
@@ -20,6 +19,7 @@
 </template>
 
 <script>
+import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
     return {
@@ -28,8 +28,12 @@ export default {
     }
   },
   methods: {
-    register () {
-      console.log('Button was clicked!', this.email, this.password)
+    async register () {
+      const response = await AuthenticationService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(response.data)
     }
   }
 }
