@@ -20,7 +20,7 @@
               label="Password"> 
             </v-text-field>
             <div class="err" v-html="error" />
-            <v-btn class="indigo" dark @click="register">Login</v-btn>
+            <v-btn class="indigo" dark @click="login">Login</v-btn>
           </v-flex>
         </div>
 
