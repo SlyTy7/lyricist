@@ -13,7 +13,11 @@ module.exports = {
   async register (req, res) {
     try {
       const user = await User.create(req.body)
-      res.send(user.toJSON())
+      const userJSON = user.toJSON()
+      res.send({
+        user: userJSON,
+        token: jwtSignUser(userJSON)
+      })
     } catch (err) {
       //email already exists
       res.status(400).send({

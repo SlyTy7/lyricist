@@ -8,17 +8,22 @@
 
         <div class="pl-4 pr-4 pt-2 pb-2">
           <v-flex xs6 offset-xs3>
-            <v-text-field 
-              type="email"
-              v-model="email" 
-              label="E-mail Address"> 
-            </v-text-field>
-            <br />
-            <v-text-field 
-              type="password"
-              v-model="password"
-              label="Password"> 
-            </v-text-field>
+            <form
+              name="lyricist-form"
+              autocomplete="off">
+              <v-text-field 
+                type="email"
+                v-model="email" 
+                label="E-mail Address"> 
+              </v-text-field>
+              <br />
+              <v-text-field 
+                type="password"
+                v-model="password"
+                label="Password"
+                autocomplete="new-password"> 
+              </v-text-field>
+            </form>
             <div class="err" v-html="error" />
             <v-btn class="indigo" dark @click="register">Register</v-btn>
           </v-flex>
