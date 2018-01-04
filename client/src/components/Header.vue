@@ -37,7 +37,8 @@
         v-if="$store.state.isUserLoggedIn" 
         flat 
         dark 
-        @click="logout">
+        @click="logout"
+        to="hello">
         Log Out
       </v-btn>
     </v-toolbar-items>
@@ -51,9 +52,6 @@ export default {
     async logout () {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
-      this.$router.push({
-        name: 'hello'
-      })
     }
   }
 }

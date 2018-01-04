@@ -5,7 +5,7 @@
       </v-toolbar>
 
       <div class="pl-4 pr-4 pt-2 pb-2">
-        <v-flex xs6 offset-xs3>
+        <v-flex xs8 offset-xs2>
           <slot>
             No slot content defined.
           </slot>
