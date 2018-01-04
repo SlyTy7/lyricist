@@ -9,8 +9,7 @@
         <div class="pl-4 pr-4 pt-2 pb-2">
           <v-flex xs6 offset-xs3>
             <form
-              name="lyricist-form"
-              autocomplete="off">
+              name="lyricist-form">
               <v-text-field 
                 type="email"
                 v-model="email" 
@@ -46,10 +45,12 @@ export default {
   methods: {
     async login () {
       try {
-        await AuthenticationService.login({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }
