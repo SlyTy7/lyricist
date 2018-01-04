@@ -1,13 +1,16 @@
 <template>
   <v-toolbar fixed class="indigo" dark>
-    <v-toolbar-title class="mr-4" to="#">
+    <v-toolbar-title class="mr-4" to="hello">
       Lyricist
     </v-toolbar-title>
 
 <!--ADD BROWSE IN FUTURE-->    
     <v-toolbar-items>
-      <v-btn flat dark to="hello">
-        Home
+      <v-btn
+        flat 
+        dark 
+        to="songs">
+        Browse
       </v-btn>
     </v-toolbar-items> 
 
@@ -29,6 +32,14 @@
         to="register">
         Sign Up
       </v-btn>
+
+      <v-btn
+        v-if="$store.state.isUserLoggedIn" 
+        flat 
+        dark 
+        @click="logout">
+        Log Out
+      </v-btn>
     </v-toolbar-items>
 
   </v-toolbar>
@@ -36,7 +47,15 @@
 
 <script>
 export default {
-
+  methods: {
+    async logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+      this.$router.push({
+        name: 'hello'
+      })
+    }
+  }
 }
 </script>
 
