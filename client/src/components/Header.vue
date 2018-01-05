@@ -4,12 +4,11 @@
       Lyricist
     </v-toolbar-title>
 
-<!--ADD BROWSE IN FUTURE-->    
     <v-toolbar-items>
       <v-btn
         flat 
         dark 
-        to="songs">
+        to="/songs">
         Browse
       </v-btn>
     </v-toolbar-items> 
@@ -21,7 +20,7 @@
         v-if="!$store.state.isUserLoggedIn"
         flat 
         dark 
-        to="login">
+        to="/login">
         Log In
       </v-btn>
 
@@ -29,7 +28,7 @@
         v-if="!$store.state.isUserLoggedIn" 
         flat 
         dark 
-        to="register">
+        to="/register">
         Sign Up
       </v-btn>
 
@@ -38,7 +37,7 @@
         flat 
         dark 
         @click="logout"
-        to="hello">
+        to="/hello">
         Log Out
       </v-btn>
     </v-toolbar-items>
